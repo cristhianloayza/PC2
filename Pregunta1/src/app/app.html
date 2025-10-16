@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios</title>
+</head>
+<body>
+<br>
+  <input [(ngModel)]="nuevousuario.nombre" placeholder="Ingrese usuario" type="text">
+  <input [(ngModel)]="nuevousuario.nacionalidad" placeholder="Ingrese su nacionalidad" type="text">
+  <input [(ngModel)]="nuevousuario.contrasena" placeholder="Ingrese constraseña" type="password">
+  <button (click)="registrar()">Registrar Datos</button>
+  <hr>
+  <table border="1" >
+    <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Nacionalidad</th>
+      <th>Constraseña</th>
+      <th>Accion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= "let c of usuarios;let i=index" >
+      <td>{{c.nombre}}</td>
+      <td>{{c.nacionalidad}}</td>
+      <td>{{c.contrasena}}</td>
+      <td><button (click) = "eliminar(i) "> Eliminar </button>
+        <button (click) = "editar(i) "> Editar </button></td>
+      
+    </tr>
+  </tbody>
+  </table>
+</body>
+</html>
